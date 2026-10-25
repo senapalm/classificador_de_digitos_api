@@ -110,7 +110,9 @@ Exemplo de estrutura da requisição:
 
 ```json
 {
-  "pixels": [0.0, 0.0, 0.0]
+  "pixels": [
+    0.0, 0.0, 0.0
+  ]
 }
 ```
 
