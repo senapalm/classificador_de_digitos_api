@@ -72,9 +72,37 @@ python -m pip install -r requirements.txt
 
 ## Execução da API
 
-Na raiz do projeto, execute:
+### Windows — usando `iniciar.bat` (recomendado)
+
+O projeto inclui o arquivo `iniciar.bat` na raiz para facilitar a inicialização da API pelo Windows.
+
+1. Abra o terminal na raiz do projeto.
+2. Se ainda não existir, crie o ambiente virtual:
+
+   ```powershell
+   python -m venv .venv
+   ```
+
+3. Instale as dependências:
+
+   ```powershell
+   .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+   ```
+
+4. Execute `iniciar.bat` com dois cliques no Explorador de Arquivos ou pelo terminal:
+
+   ```powershell
+   .\iniciar.bat
+   ```
+
+O script ativa o ambiente virtual `.venv` e inicia a API com o Uvicorn, usando recarga automática durante o desenvolvimento. Se o ambiente virtual não existir, o script informa que ele precisa ser criado.
+
+### Execução manual
+
+Como alternativa, ative o ambiente virtual e execute o Uvicorn diretamente:
 
 ```powershell
+.\.venv\Scripts\Activate.ps1
 python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
 ```
 
