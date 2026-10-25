@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Ambiente virtual
+.venv/
+.venv-*/
+venv/
+
+# Configurações locais
+.env
+.vscode/
+.idea/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos compactados e documentos PDF
+*.zip
+*.pdf

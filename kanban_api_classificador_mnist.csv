@@ -1,0 +1,20 @@
+﻿ID;Épico;Tarefa;Critério de conclusão;Status
+API-01-Criar pastas schemas, services, routers e arquivo main.py;Estrutura da API;Criar pastas schemas, services, routers e arquivo main.py;Estrutura criada conforme arquitetura definida;A fazer
+API-02-Criar requirements.txt com FastAPI, Uvicorn, Pydantic, scikit-learn e joblib;Dependências;Criar requirements.txt com FastAPI, Uvicorn, Pydantic, scikit-learn e joblib;Dependências listadas no arquivo;A fazer
+API-03-Criar ambiente virtual e instalar dependências;Ambiente;Criar ambiente virtual e instalar dependências;Ambiente funcional e dependências instaladas;A fazer
+API-04-Criar schemas Pydantic de entrada e saída com validações Field;Schemas;Criar schemas Pydantic de entrada e saída com validações Field;Campos e restrições definidos;
+API-05-Implementar serviço que recebe os pixels e executa a previsão usando o modelo;Serviço de inferência;Implementar serviço que recebe os pixels e executa a previsão usando o modelo;Serviço retorna dígito previsto e, se aplicável, probabilidades;A fazer
+API-06-Carregar o modelo uma única vez no lifespan da aplicação;Carregamento do modelo;Carregar o modelo uma única vez no lifespan da aplicação;Modelo carregado na inicialização e reutilizado nas requisições;A fazer
+API-07-Implementar GET /health;Endpoint de saúde;Implementar GET /health;Endpoint responde HTTP 200 quando a API está operacional;A fazer
+API-08-Implementar POST /predict;Endpoint de previsão;Implementar POST /predict;Recebe vetor de 784 pixels normalizados entre 0 e 1 e retorna previsão;A fazer
+API-09-Tratar entradas inválidas e falhas de processamento;Tratamento de erros;Tratar entradas inválidas e falhas de processamento;Entradas inválidas retornam 422;
+API-10-Integrar schemas, serviço, routers e main.py;Integração;Integrar schemas, serviço, routers e main.py;Aplicação inicia sem erros e rotas estão registradas;A fazer
+API-11-Executar a API com Uvicorn;Execução local;Executar a API com Uvicorn;Servidor inicia e fica acessível localmente;A fazer
+API-12-Testar GET /health;Teste de saúde;Testar GET /health;Resposta HTTP 200 e conteúdo esperado;A fazer
+API-13-Testar POST /predict com entrada válida;Teste de previsão;Testar POST /predict com entrada válida;Resposta contém o dígito previsto no formato definido;A fazer
+API-14-Testar vetor com quantidade incorreta de pixels e valores fora do intervalo;Testes de validação;Testar vetor com quantidade incorreta de pixels e valores fora do intervalo;Entradas inválidas são rejeitadas com HTTP 422;A fazer
+API-15-Validar documentação automática em /docs;Swagger;Validar documentação automática em /docs;Documentação acessível e endpoints descritos;A fazer
+API-16-Documentar objetivo, tecnologias, instalação e execução;README;Documentar objetivo, tecnologias, instalação e execução;README permite configurar e executar o projeto seguindo as instruções;A fazer
+API-17-Adicionar exemplos JSON de requisição e resposta e indicar /docs;Documentação dos endpoints;Adicionar exemplos JSON de requisição e resposta e indicar /docs;Exemplos correspondem ao contrato implementado;A fazer
+API-18-Organizar alterações em branch de feature e integrar conforme o fluxo do projeto;GitFlow;Organizar alterações em branch de feature e integrar conforme o fluxo do projeto;Commits objetivos e alterações integradas na branch definida;A fazer
+API-19-Gravar demonstração final de até 10 minutos;Vídeo de demonstração;Gravar demonstração final de até 10 minutos;Vídeo demonstra execução, endpoints e previsão;A fazer
