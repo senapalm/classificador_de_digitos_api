@@ -12,6 +12,7 @@ venv/
 .env
 .vscode/
 .idea/
+raw/
 
 # Jupyter Notebook
 .ipynb_checkpoints/
