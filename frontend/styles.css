@@ -1,0 +1,139 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 32px 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #172033;
+    background: #f3f6fb;
+}
+
+header {
+    max-width: 900px;
+    margin: 0 auto 28px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 8px;
+    font-size: 32px;
+}
+
+header p {
+    color: #657086;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #e1e7f0;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgb(20 35 60 / 5%);
+}
+
+section h2 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+input[type="file"] {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    padding: 12px;
+    border: 1px dashed #aab6c8;
+    border-radius: 8px;
+    background: #f8faff;
+}
+
+#imagePreview {
+    display: block;
+    max-width: 100%;
+    max-height: 260px;
+    margin: 16px auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+button {
+    width: 100%;
+    padding: 13px 16px;
+    border: 0;
+    border-radius: 8px;
+    background: #2458d3;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:disabled {
+    background: #aab5c8;
+    cursor: not-allowed;
+}
+
+#statusMessage {
+    color: #657086;
+    line-height: 1.5;
+}
+
+#prediction {
+    display: inline-block;
+    margin-left: 8px;
+    color: #2458d3;
+    font-size: 48px;
+}
+
+@media (max-width: 650px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+}
+
+.probability-row {
+    display: grid;
+    grid-template-columns: 20px minmax(0, 1fr) 55px;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0;
+}
+
+.probability-label {
+    font-weight: bold;
+    text-align: center;
+}
+
+.probability-track {
+    height: 16px;
+    overflow: hidden;
+    background: #e9eef7;
+    border-radius: 8px;
+}
+
+.probability-bar {
+    height: 100%;
+    background: #2458d3;
+    border-radius: 8px;
+    transition: width 0.3s ease;
+}
+
+.probability-value {
+    font-size: 13px;
+    text-align: right;
+    color: #657086;
+}
