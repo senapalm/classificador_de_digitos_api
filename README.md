@@ -1,5 +1,7 @@
 # Classificador de Dígitos MNIST — API
 
+Link do video: A ser adicionado.
+
 ## Objetivo
 
 Este projeto evolui o classificador de dígitos manuscritos desenvolvido com o conjunto de dados MNIST, disponibilizando o modelo treinado por meio de uma API REST.
@@ -8,13 +10,15 @@ A API recebe um vetor de pixels normalizados, realiza a classificação utilizan
 
 ## Tecnologias utilizadas
 
-- **Python** — linguagem de programação.
-- **FastAPI** — desenvolvimento da API REST.
-- **Uvicorn** — servidor ASGI para execução da aplicação.
-- **Scikit-learn** — implementação e utilização do modelo MLP.
-- **Joblib** — carregamento do modelo treinado.
-- **NumPy** — manipulação dos dados numéricos.
-- **Pydantic** — validação dos dados de entrada e saída.
+- **Python 3.10.7** — linguagem de programação.
+- **FastAPI 0.159.1** — desenvolvimento da API REST.
+- **Uvicorn 0.54.0** — servidor ASGI para execução da aplicação.
+- **Scikit-learn 1.7.2** — implementação e utilização do modelo MLP.
+- **Joblib 1.6.0** — carregamento do modelo treinado.
+- **NumPy 2.2.6** — manipulação dos dados numéricos.
+- **Pydantic 2.14.1** — validação dos dados de entrada e saída.
+- **Matplotlib 3.10.9** — visualização de dados e resultados.
+- **Pillow 12.3.0** — manipulação de imagens.
 - **Jupyter Notebook** — desenvolvimento, treinamento e experimentação.
 
 ## Estrutura do projeto
@@ -70,11 +74,39 @@ Instale as dependências:
 python -m pip install -r requirements.txt
 ```
 
+## AVALIAÇÃO DO MODELO
+
+Neste momento o classificador utiliza uma rede neural MLP (Multilayer Perceptron), treinada para reconhecer dígitos manuscritos do conjunto de dados MNIST.
+
+# RESULTADOS NO CONJUNTO DE TESTE
+
+Acurácia: 97,9571%
+F1-score macro: 97,9394%
+Tempo de predição: 0,04 segundos
+Total de amostras avaliadas: 14.000
+
+DESEMPENHO POR DÍGITO
+
+Dígito 0: Precisão 98,07%, Recall 99,35%, F1-score 98,71%.
+Dígito 1: Precisão 98,55%, Recall 99,17%, F1-score 98,86%.
+Dígito 2: Precisão 98,41%, Recall 97,35%, F1-score 97,88%.
+Dígito 3: Precisão 97,97%, Recall 97,90%, F1-score 97,93%.
+Dígito 4: Precisão 98,15%, Recall 96,92%, F1-score 97,53%.
+Dígito 5: Precisão 97,69%, Recall 97,07%, F1-score 97,38%.
+Dígito 6: Precisão 98,41%, Recall 98,84%, F1-score 98,62%.
+Dígito 7: Precisão 97,48%, Recall 98,22%, F1-score 97,85%.
+Dígito 8: Precisão 98,22%, Recall 97,14%, F1-score 97,68%.
+Dígito 9: Precisão 96,58%, Recall 97,34%, F1-score 96,96%.
+
+O modelo alcançou acurácia de 97,9571% no conjunto de teste, demonstrando alto desempenho na classificação de dígitos manuscritos. O F1-score macro de 97,9394% indica desempenho consistente entre as dez classes. O dígito 1 apresentou o maior F1-score, de 98,86%, enquanto o dígito 9 apresentou o menor, de 96,96%.
+
+Esses resultados fundamentam a utilização do modelo como componente de predição da API.
+
 ## Execução da API
 
 ### Windows — usando `iniciar.bat` (recomendado)
 
-O projeto inclui o arquivo `iniciar.bat` na raiz para facilitar a inicialização da API pelo Windows.
+O projeto inclui o arquivo `iniciar.bat` na raiz para facilitar a inicialização da API pelo Windows. 
 
 1. Abra o terminal na raiz do projeto.
 2. Se ainda não existir, crie o ambiente virtual:
@@ -95,7 +127,7 @@ O projeto inclui o arquivo `iniciar.bat` na raiz para facilitar a inicializaçã
    .\iniciar.bat
    ```
 
-O script ativa o ambiente virtual `.venv` e inicia a API com o Uvicorn, usando recarga automática durante o desenvolvimento. Se o ambiente virtual não existir, o script informa que ele precisa ser criado.
+O script ativa o ambiente virtual .venv e inicia a API com o Uvicorn, usando recarga automática durante o desenvolvimento. Se o ambiente virtual não existir, o script informa que ele precisa ser criado. Em seguida, inicia um servidor HTTP na porta 5500 para disponibilizar a interface web e abre o front-end no navegador.
 
 ### Execução manual
 
@@ -122,11 +154,10 @@ Verifica se a API está respondendo.
 
 Resposta esperada — HTTP 200:
 
-```json
 {
-  "status": "ok"
+  "status": "ok",
+  "model_loaded": true
 }
-```
 
 ### `POST /predict`
 
