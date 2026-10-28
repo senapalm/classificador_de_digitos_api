@@ -8,8 +8,13 @@ router = APIRouter()
 
 
 @router.get("/health")
-def health_check():
-    return {"status": "ok"}
+def health_check(request: Request):
+    model_loaded = getattr(request.app.state, "model", None) is not None
+
+    return {
+        "status": "ok" if model_loaded else "error",
+        "model_loaded": model_loaded
+    }
 
 
 @router.post("/predict", response_model=PredictionResponse)
