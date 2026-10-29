@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -14,54 +15,65 @@
     </header>
 
     <main>
-        <section>
-            <h2>1. Selecionar imagem</h2>
+        <div class="cards-container">
+            <section>
+                <h2>1. Selecionar imagem</h2>
 
-            <input
-                type="file"
-                id="imageInput"
-                accept="image/png, image/jpeg"
-            >
-
-            <div>
-                <img
-                    id="imagePreview"
-                    alt="Pré-visualização da imagem selecionada"
-                    hidden
-                    width="200"
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/png, image/jpeg"
                 >
-            </div>
-            
-            <canvas id="imageCanvas" width="28" height="28" hidden></canvas>
 
-            <div id="preparedImageContainer" hidden>
-                <p>Imagem preparada para classificação:</p>
-                <canvas id="preparedImagePreview" width="28" height="28"></canvas>
-            </div>
+                <div>
+                    <img
+                        id="imagePreview"
+                        alt="Pré-visualização da imagem selecionada"
+                        hidden
+                        width="200"
+                    >
+                </div>
 
+                <canvas id="imageCanvas" width="28" height="28" hidden></canvas>
 
-            <button id="classifyButton" disabled>
-                Classificar dígito
-            </button>
-        </section>
+                <div id="preparedImageContainer" hidden>
+                    <p>Imagem preparada para classificação:</p>
+                    <canvas id="preparedImagePreview" width="28" height="28"></canvas>
+                </div>
 
-        <section>
-            <h2>2. Resultado</h2>
+                <button id="classifyButton" disabled>
+                    Classificar dígito
+                </button>
+            </section>
 
-            <p id="statusMessage">
-                Selecione uma imagem para começar.
-            </p>
+            <section>
+                <h2>2. Resultado</h2>
 
-            <div id="result" hidden>
-                <p>
-                    Dígito previsto:
-                    <strong id="prediction">-</strong>
+                <p id="statusMessage">
+                    Selecione uma imagem para começar.
                 </p>
 
-                <h3>Probabilidades por dígito</h3>
-                <div id="probabilities"></div>
-            </div>
-        </section>
+                <div id="result" hidden>
+                    <p>
+                        Dígito previsto:
+                        <strong id="prediction">-</strong>
+                    </p>
+
+                    <h3>Probabilidades por dígito</h3>
+                    <div id="probabilities"></div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="api-health">
+            <span>Status:</span>
+            <span
+                id="apiStatusIndicator"
+                class="status-light status-offline"
+                role="status"
+                aria-label="API indisponível"
+            ></span>
+        </footer>
     </main>
 
     <script src="app.js"></script>
