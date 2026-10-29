@@ -261,3 +261,37 @@ statusMessage.textContent = "Classificação concluída!";
         classifyButton.disabled = pixels.length !== 784;
     }
 });
+
+async function verificarStatusAPI() {
+    const indicador = document.getElementById("apiStatusIndicator");
+
+    if (!indicador) return;
+
+    try {
+        const resposta = await fetch("http://127.0.0.1:8000/health");
+        
+        if (!resposta.ok) {
+            throw new Error(`HTTP ${resposta.status}`);
+        }
+
+        const dados = await resposta.json();
+        const online = String(dados.status).toLowerCase() === "ok";
+
+        indicador.classList.toggle("status-online", online);
+        indicador.classList.toggle("status-offline", !online);
+
+        indicador.setAttribute(
+            "aria-label",
+            online ? "API disponível" : "API indisponível"
+        );
+    } catch (erro) {
+        indicador.classList.remove("status-online");
+        indicador.classList.add("status-offline");
+        indicador.setAttribute("aria-label", "API indisponível");
+
+        console.error("Erro ao verificar o status da API:", erro);
+    }
+}
+
+verificarStatusAPI();
+setInterval(verificarStatusAPI, 30000);
