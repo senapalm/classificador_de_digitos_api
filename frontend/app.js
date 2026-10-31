@@ -13,12 +13,14 @@ let pixels = [];
 imageInput.addEventListener("change", function () {
     const file = imageInput.files[0];
 
+ 
     if (!file) {
         imagePreview.hidden = true;
+        document.getElementById("imagePlaceholder").hidden = false;
         classifyButton.disabled = true;
         pixels = [];
-        return;
-    }
+    return;
+}
 
     const imageUrl = URL.createObjectURL(file);
 
