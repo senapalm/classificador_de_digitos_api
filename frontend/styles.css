@@ -173,3 +173,44 @@ button:disabled {
     background-color: #ef4444;
     box-shadow: 0 0 0 2px rgb(239 68 68 / 20%);
 }
+
+.image-preview-container {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    
+}
+
+.image-placeholder {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 10px;
+    background-color: #f8fafc;
+    color: #94a3b8;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    box-sizing: border-box;
+}
+
+.image-placeholder span {
+    font-size: 12px;
+    text-align: center;
+    padding: 0 12px;
+}
+
+.image-placeholder[hidden] {
+    display: none;
+}
+
+#imagePreview[hidden],
+#imagePlaceholder[hidden] {
+    display: none !important;
+}
