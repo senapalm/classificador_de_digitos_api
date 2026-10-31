@@ -1,6 +1,6 @@
 # Classificador de Dígitos MNIST — API
 
-Link do video: A ser adicionado.
+Link do video: https://youtu.be/hJ9E1kRBvh8
 
 ## Objetivo
 
